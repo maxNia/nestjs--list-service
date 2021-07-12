@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { TypegooseModule } from 'nestjs-typegoose';
 import { DB_PASSWORD, DB_URI, DB_USERNAME, } from './constants';
 import { ContactModule } from 'src/contact/contact.module';
+import { ListModule } from 'src/list/list.module';
 
 @Module({
   imports: [
@@ -13,7 +14,8 @@ import { ContactModule } from 'src/contact/contact.module';
       useNewUrlParser: true,
       useUnifiedTopology: true
     }),
-    ContactModule
+    ContactModule,
+    ListModule
   ],
   controllers: [AppController],
   providers: [AppService],
