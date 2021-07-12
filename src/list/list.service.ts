@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { ReturnModelType } from '@typegoose/typegoose';
 import { InjectModel } from 'nestjs-typegoose';
 import { Contact } from 'src/contact/contact.model';
+import { IContact } from 'src/contact/interfaces/contact.interface';
 import { IList, IListContactIds } from './interfaces/list.interface';
 import { List } from './list.model';
 
@@ -16,7 +17,7 @@ export class ListService {
     return await this.listModel.find().exec();
   }
 
-  async getContactsByListId(id: string): Promise<any> | null {
+  async getContactsByListId(id: string): Promise<IContact[]> | null {
     const contacts = await this.listModel.findById(id);
     return contacts.contacts;
   }
@@ -26,7 +27,7 @@ export class ListService {
     return await createdList.save();
   }
 
-  async addContactToList(data: IListContactIds): Promise<any> {
+  async addContactToList(data: IListContactIds): Promise<IList> {
     const contact = await this.contactModel.findById(data.contactId)
     return await this.listModel.updateOne(
       {_id: data.listId},
