@@ -1,11 +1,9 @@
-import { getModelForClass, prop } from "@typegoose/typegoose";
+import { prop } from "@typegoose/typegoose";
 
-class Contact {
-  @prop()
-  public name!: string;
+export class Contact {
+  @prop({ required: true })
+  name: string;
   
-  @prop()
-  public email!: string;
+  @prop({ required: true })
+  email: string;
 }
-
-export const contactModel = getModelForClass(Contact);

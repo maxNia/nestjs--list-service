@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypegooseModule } from 'nestjs-typegoose';
 import { DB_PASSWORD, DB_URI, DB_USERNAME, } from './constants';
-import { contactModel } from 'src/contact/contact.model';
+import { ContactModule } from 'src/contact/contact.module';
 
 @Module({
   imports: [
@@ -13,7 +13,7 @@ import { contactModel } from 'src/contact/contact.model';
       useNewUrlParser: true,
       useUnifiedTopology: true
     }),
-    contactModel,
+    ContactModule
   ],
   controllers: [AppController],
   providers: [AppService],
