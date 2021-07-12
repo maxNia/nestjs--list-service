@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypegooseModule } from 'nestjs-typegoose';
 import { DB_PASSWORD, DB_URI, DB_USERNAME, } from './constants';
+import { contactModel } from 'src/contact/contact.model';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { DB_PASSWORD, DB_URI, DB_USERNAME, } from './constants';
       useNewUrlParser: true,
       useUnifiedTopology: true
     }),
+    contactModel,
   ],
   controllers: [AppController],
   providers: [AppService],
