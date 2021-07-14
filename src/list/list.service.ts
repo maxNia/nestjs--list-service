@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { ReturnModelType } from '@typegoose/typegoose';
 import { InjectModel } from 'nestjs-typegoose';
-import { Contact } from 'src/contact/contact.model';
-import { IContact } from 'src/contact/interfaces/contact.interface';
+
+import { Contact } from '../contact/contact.model';
+import { IContact } from '../contact/interfaces/contact.interface';
 import { IList, IListContactIds } from './interfaces/list.interface';
 import { List } from './list.model';
 

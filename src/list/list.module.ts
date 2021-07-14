@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypegooseModule } from 'nestjs-typegoose';
-import { Contact } from 'src/contact/contact.model';
+
+import { Contact } from '../contact/contact.model';
 import { ListController } from './list.controller';
 import { List } from './list.model';
 import { ListService } from './list.service';

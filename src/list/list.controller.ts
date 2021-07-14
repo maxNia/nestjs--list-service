@@ -1,5 +1,6 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import { IContact } from 'src/contact/interfaces/contact.interface';
+
+import { IContact } from '../contact/interfaces/contact.interface';
 import { IList, IListContactIds } from './interfaces/list.interface';
 import { ListService } from './list.service';
 
